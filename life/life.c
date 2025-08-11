@@ -26,7 +26,7 @@ int main(int ac, char **av)
         if (c == 'w' && y > 0) y --;
         else if (c == 's' && y < h -1) y++;
         else if (c == 'a' && x > 0) x--;
-        else if (c == 'd' && x < w - 1) x++;
+        else if (c == 'd' && x < w - 1) x++; 
         else if (c == 'x') pen = !pen;
         if (pen)
             board[DX(y,x,w)] = 1;
@@ -51,7 +51,7 @@ int main(int ac, char **av)
                     }
                 }
                 int alive = board[DX(i, j, w)];
-                next[DX(i, j, w)] = alive && (n == 2 || n == 3) || (!alive && n == 3); 
+                next[DX(i, j, w)] = (alive && (n == 2 || n == 3)) || (!alive && n == 3); 
             }
         }
         int *tmp = next;
@@ -59,16 +59,12 @@ int main(int ac, char **av)
         board = tmp;
     }
     
-    for (int i = 0 ; i < h ; i ++)
-    {
-        for (int j = 0; j < w ; j ++)
-        {
-            char out = board[DX(i, j, w)] ? 'O' : ' ';
-            write(1, &out, 1);
-        }
-        write(1,"\n",1);
+    for (int i = 0 ; i < h ; i ++) {for (int j = 0; j < w ; j ++)
+        {char out = board[DX(i, j, w)] ? 'O' : ' ';
+            putchar(out);
+	}
+        putchar(10);
     }
 
-    free(board);
-    free(next);
+    free(board), free(next);
 }
