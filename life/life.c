@@ -59,10 +59,11 @@ int main(int ac, char **av)
         board = tmp;
     }
     
-    for (int i = 0 ; i < h ; i ++) {for (int j = 0; j < w ; j ++)
-        {char out = board[DX(i, j, w)] ? 'O' : ' ';
+    for (int i = 0 ; i < h ; i ++) {
+        for (int j = 0; j < w ; j ++) {
+            char out = board[DX(i, j, w)] ? 'O' : ' ';
             putchar(out);
-	}
+	    }
         putchar(10);
     }
 
