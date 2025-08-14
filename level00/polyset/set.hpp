@@ -29,7 +29,7 @@ class set
             bag.print();
         }
 
-        searchable_bag &get_bag() {
+        searchable_bag &get_bag() const {
             return (bag);
         }
 };
