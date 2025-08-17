@@ -33,17 +33,12 @@ int main(int ac, char **av)
     }
 
 
-    for (int t = 0 ; t < iter ; t++)
-    {
-        for (int i = 0 ; i < h ; i ++)
-        {
-            for (int j = 0; j < w ; j ++)
-            {
+    for (int t = 0 ; t < iter ; t++) {
+        for (int i = 0 ; i < h ; i ++) {
+            for (int j = 0; j < w ; j ++) {
                 int n = 0;
-                for (int di = -1; di <= 1 ; di ++)
-                {
-                    for (int dj = -1; dj <= 1 ; dj ++)
-                    {
+                for (int di = -1; di <= 1 ; di ++) {
+                    for (int dj = -1; dj <= 1 ; dj ++) {
                         int ni = di + i;
                         int nj = dj + j;
                         if ((di || dj) && ni >= 0 && ni < h && nj >= 0 && nj < w)
